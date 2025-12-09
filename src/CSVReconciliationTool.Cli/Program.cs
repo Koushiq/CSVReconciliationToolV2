@@ -101,6 +101,23 @@ public static class Program
             logger.LogInfo("Starting reconciliation process...");
             logger.LogInfo("");
 
+            var summary = await reconciliationEngine.RunAsync(options);
+            
+            // Print summary
+            logger.LogInfo("");
+            logger.LogInfo("=== RECONCILIATION SUMMARY ===");
+            logger.LogInfo($"Total processing time: {summary.TotalProcessingTimeMs}ms");
+            logger.LogInfo($"File pairs processed: {summary.TotalFilePairs}");
+            logger.LogInfo($"Missing files: {summary.MissingFiles}");
+            logger.LogInfo($"Total records in Folder A: {summary.TotalRecordsInA}");
+            logger.LogInfo($"Total records in Folder B: {summary.TotalRecordsInB}");
+            logger.LogInfo($"Total matched: {summary.TotalMatched}");
+            logger.LogInfo($"Total only in Folder A: {summary.TotalOnlyInA}");
+            logger.LogInfo($"Total only in Folder B: {summary.TotalOnlyInB}");
+            logger.LogInfo($"Total errors: {summary.TotalErrors}");
+            logger.LogInfo("");
+            logger.LogInfo($"Output written to: {outputFolder}");
+            logger.LogInfo($"Log file: {logPath}");
             
             
         }
