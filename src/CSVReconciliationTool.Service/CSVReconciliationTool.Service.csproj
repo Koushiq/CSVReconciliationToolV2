@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CSVReconciliationTool.Core\CSVReconciliationTool.Core.csproj" />
+    </ItemGroup>
+
 </Project>
