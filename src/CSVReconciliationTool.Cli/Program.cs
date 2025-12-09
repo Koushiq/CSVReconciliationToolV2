@@ -93,15 +93,14 @@ public static class Program
 
             // Create services
             var csvParser = new CsvParser(logger);
-           
-            //var reconciliationEngine = new ReconciliationEngineService();
+            var resultGenerator = new ResultGenerator(logger);
+            var reconciliationEngine = new ReconciliationEngineService(csvParser, resultGenerator, logger);
             
             // Run reconciliation
             logger.LogInfo("");
             logger.LogInfo("Starting reconciliation process...");
             logger.LogInfo("");
 
-            
             
             
         }
