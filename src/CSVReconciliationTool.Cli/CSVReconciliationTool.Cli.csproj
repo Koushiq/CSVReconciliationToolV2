@@ -8,10 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="ReconcilationEngine\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CSVReconciliationTool.Core\CSVReconciliationTool.Core.csproj" />
       <ProjectReference Include="..\CSVReconciliationTool.Service\CSVReconciliationTool.Service.csproj" />
     </ItemGroup>
